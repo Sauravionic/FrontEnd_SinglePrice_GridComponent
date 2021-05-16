@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+html {
+    box-sizing: border-box;
+}
+:root {
+    --white: hsl(0, 0%, 100%);
+    --cyan: hsl(179, 62%, 40%);
+    --lightCyan: hsl(179, 62%, 46%);
+    --brightYellow: hsl(71, 73%, 54%);
+    --darkYellow: hsl(71, 73%, 48%);
+    --lightGray: hsl(204, 43%, 93%);
+    --grayBlue: hsl(218, 22%, 67%);
+    --paddingX: 1.8rem;
+    --paddingY: 1.5rem;
+
+}
+*,*::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Karla', sans-serif;
+    line-height: 1.4;
+    color: var(--grayBlue);
+    background-color: var(--lightGray);
+    padding: var(--paddingX);
+}
+
+a {
+    text-decoration: none;
+}
+p {
+    margin-top: 0;
+}
+
+h1,h2,h3 {
+    margin-top: 0;
+    line-height: 1.15rem;
+    font-weight: bold;
+}
+h2 {
+    font-size: 1.25 rem;
+    margin-bottom: 1.25rem;
+}
+h3 {
+    font-size: 1.1rem;
+}
+.price {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 40rem;
+    /* for centering elemtns margin in desktop version */
+    margin: auto; 
+}
+/* for desktop  */
+@media only screen and (min-width: 62.5em) {
+  .price {
+    display: grid;
+    grid-template-columns: repeat(2, 1 fr);
+    grid-template-rows: repeat(2,auto);
+  }
+  .community {
+      grid-column: 1 / 3;
+  }
+  .community h2,p,.subtitle {
+      margin-left: 1rem;
+  }
+  .subscription h3,.subscription__price,p,a {
+      margin-left: 1rem;
+  }
+  .subscription a {
+      margin-top:1rem;
+      margin-right:2rem;
+  }
+  .why h3,ul {
+    margin-left: 1rem;
+}
+}
+
+.price > * {
+    padding: var(--paddingX) var(--paddingY);
+}
+.community {
+    background-color: var(--white);
+    /* border-radius: 1em; */
+}
+
+.community h2 {
+    color: var(--cyan);
+}
+.community .subtitle {
+    font-size: 1rem;
+    color: var(--brightYellow);
+    font-weight: bold;
+    margin-bottom: 0.85rem;
+}
+
+.community p {
+    font-size: 0.85rem;
+    line-height: 2;
+    margin-bottom: 0;;
+}
+
+.subscription{
+    background-color: var(--cyan);
+    color: var(--lightGray);
+}
+.subscription h2 {
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+.subscription__price{
+    /* display flex and align center for per month to be in center of 29 dollars */
+    display: flex;
+    align-items: center;      
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: bold;
+}
+.subscription__price span {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 0.8rem;
+    opacity: 0.7;
+}
+.subscription p {
+    font-size: 0.9rem;
+    margin-bottom: 1.1rem;
+}
+.subscription a {
+    padding:0.75rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    display: block;
+    text-align: center;
+    background-color: var(--brightYellow);
+    color: var(--lightGray);
+    transition: background-color 20ms ease-in;
+}
+.subscription a:hover {
+    background-color: var(--darkYellow);
+}
+.why {
+    background-color: var(--lightCyan);
+    color: var(--lightGray);
+}
+.why h3 {
+    margin-bottom: 1.5rem;
+}
+.why ul {
+    margin-top: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.why ul li {
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+}
+
+footer {
+    display: block;
+    text-align: center;
+}
